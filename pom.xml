@@ -19,7 +19,7 @@
         <log4j-version>1.2.16</log4j-version>
         <maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
         <maven-surefire-plugin-version>2.4.3</maven-surefire-plugin-version>
-        <spring-integration-core-version>2.0.4.BUILD-SNAPSHOT</spring-integration-core-version>
+        <spring-integration-core-version>2.0.5.BUILD-SNAPSHOT</spring-integration-core-version>
         <spring-integration-amqp-version>2.0.4.BUILD-SNAPSHOT</spring-integration-amqp-version>
         <spring-version>3.1.0.M1</spring-version>
     </properties>
@@ -29,13 +29,11 @@
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-core</artifactId>
             <version>${spring-integration-core-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-http</artifactId>
             <version>${spring-integration-core-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.integration</groupId>
@@ -46,7 +44,6 @@
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-file</artifactId>
             <version>${spring-integration-core-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
@@ -57,49 +54,41 @@
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-ip</artifactId>
             <version>${spring-integration-core-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-xml</artifactId>
             <version>${spring-integration-core-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>${spring-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${spring-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${jstl-version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
