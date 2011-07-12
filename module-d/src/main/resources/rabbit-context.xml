@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:int-http="http://www.springframework.org/schema/integration/http"
+	xmlns:amqp="http://www.springframework.org/schema/integration/amqp"
+	xmlns:cloud="http://schema.cloudfoundry.org/spring"
+	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xmlns:int-ip="http://www.springframework.org/schema/integration/ip"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http-2.0.xsd
+		http://www.springframework.org/schema/integration/amqp http://www.springframework.org/schema/integration/amqp/spring-integration-amqp-2.0.xsd
+		http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.6.xsd
+		http://www.springframework.org/schema/integration/ip http://www.springframework.org/schema/integration/ip/spring-integration-ip-2.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<rabbit:admin connection-factory="rabbitConnectionFactory"/>
+		
+		<amqp:outbound-gateway request-channel="searchFormReceiveChannel"
+								routing-key="module-d.queue"
+								reply-channel="replyChannel"
+								amqp-template="amqpTemplate"/>
+
+		<int:bridge input-channel="replyChannel"/>
+		
+		<rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory"/>
+	
+		<!-- CLOUD -->
+		<beans profile="cloud">
+			<int-http:outbound-gateway url="http://module-c.cloudfoundry.com/service/searchForm?formName={formName}"
+									request-channel="searchFormReceiveChannel" 
+									http-method="GET" 
+									request-timeout="5000"
+									expected-response-type="java.lang.String"
+									order="10">
+				<int-http:uri-variable name="formName" expression="payload"/>
+			</int-http:outbound-gateway>
+		
+			<int-http:outbound-gateway url="http://module-a.cloudfoundry.com/service/searchItem?itemName={itemName}"
+										request-channel="searchCriteriaOutputChannel" 
+										http-method="GET"
+										request-timeout="5000"
+										expected-response-type="java.lang.String">
+				<int-http:uri-variable name="itemName" expression="payload"/>
+			</int-http:outbound-gateway>
+			
+			<cloud:rabbit-connection-factory id="rabbitConnectionFactory" />
+			<cloud:service-properties id="serviceProperties" />
+		</beans>
+		
+		<!-- LOCAL -->
+		<beans profile="local">
+			<int-http:outbound-gateway url="http://localhost:8080/module-c/service/searchForm?formName={formName}" 
+									request-channel="searchFormReceiveChannel" 
+									http-method="GET"
+									request-timeout="5000"
+									expected-response-type="java.lang.String">
+				<int-http:uri-variable name="formName" expression="payload"/>
+			</int-http:outbound-gateway>
+			
+			<int-http:outbound-gateway url="http://localhost:8080/module-a/service/searchItem?itemName={itemName}"
+										request-channel="searchCriteriaOutputChannel" 
+										http-method="GET"
+										request-timeout="5000"
+										expected-response-type="java.lang.String">
+				<int-http:uri-variable name="itemName" expression="payload"/>
+			</int-http:outbound-gateway>
+			<rabbit:connection-factory id="rabbitConnectionFactory"/>
+		</beans>
+		
+</beans>

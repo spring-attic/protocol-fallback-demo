@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-http="http://www.springframework.org/schema/integration/http"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:int-channel-registry="http://www.springframework.org/schema/integration/registry"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http-2.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/registry http://www.springframework.org/schema/integration/registry/spring-integration-registry-2.0.xsd">
+
+	<int-http:inbound-gateway request-channel="searchCriteriaRecieveChannel" 
+							  supported-methods="GET"
+							  name="/searchGateway"/>
+							    
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<bean class="module.d.SearchController">
+		<constructor-arg ref="searchFormGateway"/>
+	</bean>
+	
+</beans>

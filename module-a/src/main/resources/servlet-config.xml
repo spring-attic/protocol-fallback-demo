@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-http="http://www.springframework.org/schema/integration/http"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:int-channel-registry="http://www.springframework.org/schema/integration/registry"
+	xmlns:int-file="http://www.springframework.org/schema/integration/file"
+	xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http-2.0.xsd
+		http://www.springframework.org/schema/integration/xml http://www.springframework.org/schema/integration/xml/spring-integration-xml-2.0.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file-2.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/registry http://www.springframework.org/schema/integration/registry/spring-integration-registry-2.0.xsd">
+
+	<int-http:inbound-gateway request-channel="requestReceiveChannel"
+			name="/searchItem"			
+			supported-methods="GET"/>
+			
+	<int:transformer input-channel="requestReceiveChannel" output-channel="requestChannel">
+		<bean class="module.a.RequestTransformer"/>
+	</int:transformer>
+
+	<int:channel id="requestChannel"/>
+	
+	<int-http:outbound-gateway id="locationImageGateway"
+	                           request-channel="requestChannel" 
+					           url="http://maps.google.com/maps/api/staticmap?center={center}&amp;zoom={zoom}&amp;size={size}&amp;sensor={sensor}&amp;markers=color:blue|label:S|{label}&amp;maptype=hybrid"
+					           http-method="GET"
+					           request-timeout="5000"
+					           mapped-request-headers="Content-Type"
+					           reply-channel="uiGenerationChannel"
+					           expected-response-type="byte[]">
+		<int-http:uri-variable name="center" expression="payload"/>
+		<int-http:uri-variable name="label" expression="payload"/>
+		<int-http:uri-variable name="zoom" expression="'15'"/>
+		<int-http:uri-variable name="size" expression="'400x400'"/>
+		<int-http:uri-variable name="sensor" expression="'false'"/>
+	</int-http:outbound-gateway>
+	
+
+	<int:service-activator input-channel="uiGenerationChannel">
+		<bean class="module.a.UiGenerator"/>
+	</int:service-activator>
+	
+</beans>
