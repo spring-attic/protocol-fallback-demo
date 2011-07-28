@@ -21,7 +21,7 @@
 
 	<int-amqp:inbound-gateway request-channel="searchFormReceiveChannel"
 							  connection-factory="rabbitConnectionFactory" 
-							  queue-names="module-d.queue" />
+							  queue-names="searchFormQueue"/>
 
 	<int:channel id="searchFormReceiveChannel" />
 
@@ -31,7 +31,7 @@
 
 	<rabbit:admin connection-factory="rabbitConnectionFactory" />
 
-	<rabbit:queue name="module-d.queue" auto-delete="true" />
+	<rabbit:queue name="searchFormQueue" auto-delete="true" />
 
 	<rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory" />
 

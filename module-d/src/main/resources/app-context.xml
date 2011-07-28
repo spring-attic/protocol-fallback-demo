@@ -16,12 +16,16 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<int:channel id="searchCriteriaRecieveChannel"/>
-		
+	
 	<int:transformer input-channel="searchCriteriaRecieveChannel" output-channel="searchCriteriaOutputChannel">
 		<bean class="module.d.RequestTransformer"/>
 	</int:transformer>
 
 	<int:channel id="searchCriteriaOutputChannel"/>
+	
+	<int-amqp:outbound-gateway request-channel="searchCriteriaOutputChannel"
+							routing-key="searchCriteriaQueue"
+							amqp-template="amqpTemplate"/>
 	
 	<int:gateway id="searchFormGateway" 
 	             service-interface="module.d.SearchUiGateway" 
@@ -36,9 +40,9 @@
 	<task:executor id="executor" pool-size="10"/>
 	
 	<rabbit:admin connection-factory="rabbitConnectionFactory"/>
-		
+							
 	<int-amqp:outbound-gateway request-channel="searchFormReceiveChannel"
-							routing-key="module-d.queue"
+							routing-key="searchFormQueue"
 							amqp-template="amqpTemplate"/>
 
 	<rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory"/>

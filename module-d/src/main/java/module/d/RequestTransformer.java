@@ -18,19 +18,27 @@ package module.d;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.integration.Message;
+import org.springframework.integration.MessageChannel;
+import org.springframework.integration.support.MessageBuilder;
+
 /**
  * @author Oleg Zhurakousky
  *
  */
 public class RequestTransformer {
 
-	public Object transform(Map<String, List<String>> payload){
+	public Message<?> transform(Message<Map<String, List<String>>> message){
+		Map<String, List<String>> payload = message.getPayload();
 		System.out.println("TRansforming Message: " + payload);
 		List<String> searchString = (List<String>) payload.get("searchString");
 		if (searchString == null){
 			searchString = (List<String>) payload.get("formName");
 		}
 		String searchElement = searchString.get(0);
-		return searchElement;
+		return MessageBuilder.withPayload(searchElement).
+				setReplyChannel((MessageChannel) message.getHeaders().getReplyChannel()).
+				setErrorChannel((MessageChannel) message.getHeaders().getErrorChannel()).
+				build();
 	}
 }
