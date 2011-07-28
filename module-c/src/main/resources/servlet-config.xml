@@ -1,49 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:int="http://www.springframework.org/schema/integration"
 	xmlns:int-http="http://www.springframework.org/schema/integration/http"
-	xmlns:task="http://www.springframework.org/schema/task"
-	xmlns:rabbit="http://www.springframework.org/schema/rabbit"
-	xmlns:amqp="http://www.springframework.org/schema/integration/amqp"
-	xmlns:cloud="http://schema.cloudfoundry.org/spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http-2.0.xsd
-		http://www.springframework.org/schema/integration/amqp http://www.springframework.org/schema/integration/amqp/spring-integration-amqp-2.0.xsd
-		http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.6.xsd
-		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
-		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
-		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<int-http:inbound-gateway request-channel="requestReceiveChannel"
-			name="/searchForm"
-			supported-methods="GET"/>
-			
-<!-- 	<int:transformer input-channel="requestReceiveChannel" output-channel="searchFormReceiveChannel"> -->
-<!-- 		<bean class="module.c.RequestTransformer"/> -->
-<!-- 	</int:transformer> -->
+							  name="/searchForm" 
+							  supported-methods="GET" />
 
-<!-- 	<amqp:inbound-gateway request-channel="searchFormReceiveChannel" -->
-<!-- 		connection-factory="rabbitConnectionFactory" -->
-<!-- 		queue-names="module-d.queue" />						    -->
-							    
-<!-- 	<int:channel id="searchFormReceiveChannel"/> -->
-	
-<!-- 	<int:service-activator input-channel="searchFormReceiveChannel"> -->
-<!-- 		<bean class="module.c.FormGenerator"/> -->
-<!-- 	</int:service-activator> -->
-	
-<!-- 	<rabbit:admin connection-factory="rabbitConnectionFactory" /> -->
 
-<!-- 	<rabbit:queue name="module-d.queue" auto-delete="true"/> -->
-	
-<!-- 	<rabbit:template id="amqpTemplate" connection-factory="rabbitConnectionFactory"/> -->
-	
-<!-- 	<beans profile="local"> -->
-<!-- 		<rabbit:connection-factory id="rabbitConnectionFactory"/> -->
-<!-- 	</beans> -->
-<!-- 	<beans profile="cloud"> -->
-<!-- 		<cloud:rabbit-connection-factory id="rabbitConnectionFactory" /> -->
-<!-- 		<cloud:service-properties id="serviceProperties" /> -->
-<!-- 	</beans> -->
 </beans>

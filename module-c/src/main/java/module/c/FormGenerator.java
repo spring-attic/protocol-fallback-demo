@@ -13,12 +13,12 @@ public class FormGenerator {
 	
 	
 	private String formA = "<div id=\"searchForm\"><form id=\"searchForm\" action=\"#\" method=\"get\"> " + 
-				     "<label for=\"searchString\">Search location:</label> " +
+				     "<label for=\"searchString\">Enter location (e.g., Kiev or 1600 Pennsylvania av, DC.):</label> " +
 				     "<input type=\"text\" name=\"searchString\" size=\"35\"/> " +
-				     "<input type=\"submit\" value=\"Search\"/>" +	
+				     "<input type=\"submit\" value=\"Search Location\"/>" +	
 			      "</form></div>";
 	private String formB = "<div id=\"searchForm\"><form id=\"searchForm\" action=\"#\" method=\"get\"> " + 
-    				"<label for=\"searchString\">Search Product:</label> " +
+    				"<label for=\"searchString\">Search Location:</label> " +
     				"<input type=\"text\" name=\"searchString\" size=\"35\"/> " +
     				"<input type=\"submit\" value=\"Find Product\"/>" +	
     			"</form></div>";

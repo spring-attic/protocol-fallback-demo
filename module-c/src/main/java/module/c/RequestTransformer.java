@@ -16,8 +16,7 @@
 package module.c;
 
 import java.util.List;
-
-import org.springframework.util.MultiValueMap;
+import java.util.Map;
 
 /**
  * @author Oleg Zhurakousky
@@ -26,7 +25,7 @@ import org.springframework.util.MultiValueMap;
 public class RequestTransformer {
 
 	@SuppressWarnings("unchecked")
-	public Object transform(MultiValueMap<?, ?> payload){
+	public Object transform(Map<?, ?> payload){
 		List<String> searchString = (List<String>) payload.get("formName");
 		String searchElement = searchString.get(0);
 		return searchElement;

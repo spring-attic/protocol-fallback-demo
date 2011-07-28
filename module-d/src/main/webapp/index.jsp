@@ -53,7 +53,7 @@ function post_to_url(path, params, method) {
 	</div>
 <hr/>
 <h2>Modular Development for the cloud with Spring Technologies</h2>
-<h3 class="alt">Spring Integration, Spring MVC, jQuery, JSP &#8451;</h3>
+<h3 class="alt">Spring Integration, Spring MVC, jQuery</h3>
 <p>
 	<a id="searchFormRequest" href="#" onclick="post_to_url('service/search', {'searchFormName':'form-a'});" >Begin</a>
 </p>

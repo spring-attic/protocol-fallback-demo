@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Search Item</title>
+	<title>Search Location</title>
 	<link rel="stylesheet" href="<c:url value="/resources/styles/blueprint/screen.css" />" type="text/css" media="screen, projection" />
 	<script type="text/javascript" src="<c:url value="/resources/javascript/jquery/1.5.1/jquery.js" />"></script>
 	<script src="<c:url value="/resources/javascript/custom.js" />" type="text/javascript"></script>
