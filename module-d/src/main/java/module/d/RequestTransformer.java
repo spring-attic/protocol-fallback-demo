@@ -25,6 +25,7 @@ import java.util.Map;
 public class RequestTransformer {
 
 	public Object transform(Map<String, List<String>> payload){
+		System.out.println("TRansforming Message: " + payload);
 		List<String> searchString = (List<String>) payload.get("searchString");
 		if (searchString == null){
 			searchString = (List<String>) payload.get("formName");
