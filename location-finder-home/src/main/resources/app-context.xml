@@ -49,7 +49,7 @@
 
 	<!-- CLOUD -->
 	<beans profile="cloud">
-		<int-http:outbound-gateway url="http://search-finder-form.cloudfoundry.com/service/searchForm?formName={formName}"
+		<int-http:outbound-gateway url="http://location-finder-form.cloudfoundry.com/service/searchForm?formName={formName}"
 								request-channel="searchFormReceiveChannel" 
 								http-method="GET" 
 								request-timeout="5000"
@@ -57,7 +57,7 @@
 			<int-http:uri-variable name="formName" expression="payload"/>
 		</int-http:outbound-gateway>
 	
-		<int-http:outbound-gateway url="http://search-finder.cloudfoundry.com/service/searchItem?itemName={itemName}"
+		<int-http:outbound-gateway url="http://location-finder.cloudfoundry.com/service/searchItem?itemName={itemName}"
 									request-channel="searchCriteriaOutputChannel" 
 									http-method="GET"
 									request-timeout="5000"
@@ -71,7 +71,7 @@
 	
 	<!-- LOCAL -->
 	<beans profile="local">
-		<int-http:outbound-gateway url="http://localhost:8080/search-finder-form/service/searchForm?formName={formName}" 
+		<int-http:outbound-gateway url="http://localhost:8080/location-finder-form/service/searchForm?formName={formName}" 
 								request-channel="searchFormReceiveChannel" 
 								http-method="GET"
 								request-timeout="5000"
@@ -79,7 +79,7 @@
 			<int-http:uri-variable name="formName" expression="payload"/>
 		</int-http:outbound-gateway>
 		
-		<int-http:outbound-gateway url="http://localhost:8080/search-finder/service/searchItem?itemName={itemName}"
+		<int-http:outbound-gateway url="http://localhost:8080/location-finder/service/searchItem?itemName={itemName}"
 									request-channel="searchCriteriaOutputChannel" 
 									http-method="GET"
 									request-timeout="5000"
