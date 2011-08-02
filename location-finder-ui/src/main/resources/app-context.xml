@@ -23,7 +23,7 @@
 
 	<int:channel id="searchCriteriaOutputChannel"/>
 	
-	<int-amqp:outbound-gateway request-channel="searchCriteriaOutputChannel"
+	<int-amqp:outbound-gateway request-channel="searchCriteriaOutputChannel" 
 							routing-key="searchCriteriaQueue"
 							amqp-template="amqpTemplate"/>
 	

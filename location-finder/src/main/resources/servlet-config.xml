@@ -21,7 +21,7 @@
 			
 	<int-amqp:inbound-gateway request-channel="requestChannel"
 							  connection-factory="rabbitConnectionFactory" 
-							  queue-names="searchCriteriaQueue" />
+							  queue-names="searchCriteriaQueue"/>
 			
 	<int:transformer input-channel="requestReceiveChannel" output-channel="requestChannel">
 		<bean class="module.a.RequestTransformer"/>

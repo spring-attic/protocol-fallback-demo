@@ -7,9 +7,9 @@
     <packaging>pom</packaging>
     <name>Protocol Fallback Demo</name>
     <modules>
-        <module>module-a</module>
-        <module>module-c</module>
-        <module>module-d</module>
+        <module>location-finder</module>
+        <module>location-finder-ui</module>
+        <module>location-finder-form</module>
     </modules>
     <properties>
         <cloudfoundry-version>0.7.0</cloudfoundry-version>

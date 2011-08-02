@@ -7,9 +7,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>org.springframework.integration.demo</groupId>
-    <artifactId>module-c</artifactId>
+    <artifactId>location-finder-form</artifactId>
     <packaging>war</packaging>
-    <name>Protocol Fallback Demo :: Module C</name>
+    <name>Protocol Fallback Demo :: Location Finder Form</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.integration</groupId>
