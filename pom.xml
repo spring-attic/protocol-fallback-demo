@@ -8,7 +8,7 @@
     <name>Protocol Fallback Demo</name>
     <modules>
         <module>location-finder</module>
-        <module>location-finder-ui</module>
+        <module>location-finder-home</module>
         <module>location-finder-form</module>
     </modules>
     <properties>

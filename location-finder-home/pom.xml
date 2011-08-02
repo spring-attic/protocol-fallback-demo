@@ -6,10 +6,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>org.springframework.integration.demo</groupId>
-    <artifactId>location-finder-ui</artifactId>
+    <artifactId>location-finder-home</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Protocol Fallback Demo :: Location Finder UI</name>
+    <name>Protocol Fallback Demo :: Location Finder HOME</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.integration</groupId>
