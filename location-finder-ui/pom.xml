@@ -19,10 +19,7 @@
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-http</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.integration</groupId>
-            <artifactId>spring-integration-ip</artifactId>
-        </dependency>
+       
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-amqp</artifactId>
@@ -51,12 +48,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
-<!--        <dependency> -->
-<!--            <groupId>channel-registry</groupId> -->
-<!--            <artifactId>channel-registry</artifactId> -->
-<!--            <version>0.0.1-SNAPSHOT</version> -->
-            
-<!--        </dependency> -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="3.0">
   <context-param>
-    <javaee:param-name>spring.profiles.default</javaee:param-name>
-    <javaee:param-value>cloud</javaee:param-value>
+    <param-name>spring.profiles.default</param-name>
+    <param-value>cloud</param-value>
   </context-param>
   <servlet>
     <servlet-name>dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet
 		</servlet-class>
     <init-param>
-      <javaee:param-name>contextConfigLocation</javaee:param-name>
-      <javaee:param-value>classpath:servlet-config.xml</javaee:param-value>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:servlet-config.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>

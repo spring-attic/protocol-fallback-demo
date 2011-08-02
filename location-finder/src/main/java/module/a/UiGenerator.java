@@ -3,6 +3,7 @@ package module.a;
 import sun.misc.BASE64Encoder;
 
 
+@SuppressWarnings("restriction")
 public class UiGenerator {
 
 	public String produceResponse(byte[] image){
