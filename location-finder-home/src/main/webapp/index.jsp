@@ -53,7 +53,7 @@ function post_to_url(path, params, method) {
 	</div>
 <hr/>
 <h2>Modular Development for the cloud with Spring Technologies</h2>
-<h3 class="alt">Spring Integration, RabbitMq and SpringAMQP, Spring MVC, jQuery</h3>
+<h3 class="alt">Spring Integration, RabbitMQ and Spring-AMQP, Spring MVC, jQuery and Node.JS</h3>
 <p>
 <table width="100%">
 	<tr><td><a id="searchFormRequest" href="#" onclick="post_to_url('service/search', {'searchFormName':'form-a'});" >Java Front End</a></td></tr>
