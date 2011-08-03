@@ -1,0 +1,10 @@
+{
+
+  "name":"node-srs-demo",
+  "author": "Oleg Zhurakousky",
+  "version":"0.0.2",
+  "dependencies":{
+    "amqp":">= 0.1.0"
+  }
+
+}
