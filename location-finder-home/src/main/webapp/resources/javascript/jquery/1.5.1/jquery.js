@@ -1,13 +1,13 @@
 /*!
  * jQuery JavaScript Library v1.5.1
- * http://jquery.com/
+ * https://jquery.com/
  *
  * Copyright 2011, John Resig
  * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * https://jquery.org/license
  *
  * Includes Sizzle.js
- * http://sizzlejs.com/
+ * https://sizzlejs.com/
  * Copyright 2011, The Dojo Foundation
  * Released under the MIT, BSD, and GPL Licenses.
  *
@@ -541,7 +541,7 @@ jQuery.extend({
 		data = jQuery.trim( data );
 
 		// Make sure the incoming data is actual JSON
-		// Logic borrowed from http://json.org/json2.js
+		// Logic borrowed from https://json.org/json2.js
 		if ( rvalidchars.test(data.replace(rvalidescape, "@")
 			.replace(rvalidtokens, "]")
 			.replace(rvalidbraces, "")) ) {
@@ -584,7 +584,7 @@ jQuery.extend({
 	globalEval: function( data ) {
 		if ( data && rnotwhite.test(data) ) {
 			// Inspired by code by Andrea Giammarchi
-			// http://webreflection.blogspot.com/2007/08/global-scope-evaluation-and-dom.html
+			// https://webreflection.blogspot.com/2007/08/global-scope-evaluation-and-dom.html
 			var head = document.head || document.getElementsByTagName( "head" )[0] || document.documentElement,
 				script = document.createElement( "script" );
 
@@ -977,7 +977,7 @@ jQuery.extend({
 	},
 
 	// Use of jQuery.browser is frowned upon.
-	// More details: http://docs.jquery.com/Utilities/jQuery.browser
+	// More details: https://docs.jquery.com/Utilities/jQuery.browser
 	uaMatch: function( ua ) {
 		ua = ua.toLowerCase();
 
@@ -1283,7 +1283,7 @@ return jQuery;
 	});
 
 	// Technique from Juriy Zaytsev
-	// http://thinkweb2.com/projects/prototype/detecting-event-support-without-browser-sniffing/
+	// https://thinkweb2.com/projects/prototype/detecting-event-support-without-browser-sniffing/
 	var eventSupported = function( eventName ) {
 		var el = document.createElement("div");
 		eventName = "on" + eventName;
@@ -1714,7 +1714,7 @@ jQuery.fn.extend({
 	},
 
 	// Based off of the plugin by Clint Helfers, with permission.
-	// http://blindsignals.com/index.php/2009/07/jquery-delay/
+	// http://blindsignals.com
 	delay: function( time, type ) {
 		time = jQuery.fx ? jQuery.fx.speeds[time] || time : time;
 		type = type || "fx";
@@ -2072,7 +2072,7 @@ jQuery.extend({
 				}
 
 				// elem.tabIndex doesn't always return the correct value when it hasn't been explicitly set
-				// http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
+				// https://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
 				if ( name === "tabIndex" ) {
 					var attributeNode = elem.getAttributeNode( "tabIndex" );
 
@@ -3298,7 +3298,7 @@ jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblcl
  * Sizzle CSS Selector Engine
  *  Copyright 2011, The Dojo Foundation
  *  Released under the MIT, BSD, and GPL Licenses.
- *  More information: http://sizzlejs.com/
+ *  More information: https://sizzlejs.com/
  */
 (function(){
 
@@ -4895,7 +4895,7 @@ jQuery.each({
 			// The variable 'args' was introduced in
 			// https://github.com/jquery/jquery/commit/52a0238
 			// to work around a bug in Chrome 10 (Dev) and should be removed when the bug is fixed.
-			// http://code.google.com/p/v8/issues/detail?id=1050
+			// https://code.google.com/p/v8/issues/detail?id=1050
 			args = slice.call(arguments);
 
 		if ( !runtil.test( name ) ) {
@@ -7287,7 +7287,7 @@ if ( jQuery.support.ajax ) {
 
 					// Requested-With header
 					// Not set for crossDomain requests with no content
-					// (see why at http://trac.dojotoolkit.org/ticket/9486)
+					// (see why at https://trac.dojotoolkit.org/ticket/9486)
 					// Won't change header if already provided
 					if ( !( s.crossDomain && !s.hasContent ) && !headers["X-Requested-With"] ) {
 						headers[ "X-Requested-With" ] = "XMLHttpRequest";
@@ -7316,7 +7316,7 @@ if ( jQuery.support.ajax ) {
 
 						// Firefox throws exceptions when accessing properties
 						// of an xhr when a network error occured
-						// http://helpful.knobs-dials.com/index.php/Component_returned_failure_code:_0x80040111_(NS_ERROR_NOT_AVAILABLE)
+						// https://helpful.knobs-dials.com/index.php/Component_returned_failure_code:_0x80040111_(NS_ERROR_NOT_AVAILABLE)
 						try {
 
 							// Was never called and is aborted or complete

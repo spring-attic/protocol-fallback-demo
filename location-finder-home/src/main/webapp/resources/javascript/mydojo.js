@@ -152,7 +152,7 @@
 //	            	var li = "";
 //	            	for ( var y = 0; y < menuItems.length; y++) {
 //	            		var menuItem = menuItems[y];
-//	            		li +="<li><span class='command'><a href='http://www.oleg.com'>" + menuItem.name + "</a><b> - $" + menuItem.price + "</b></span></li>";
+//	            		li +="<li><span class='command'><a href='https://www.oleg.com'>" + menuItem.name + "</a><b> - $" + menuItem.price + "</b></span></li>";
 //	            	}
 //	            	//alert(li);
 //					tp = new dijit.TitlePane({
