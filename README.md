@@ -43,12 +43,12 @@ Cloud Foundry
 1. Build each Java project with Maven - 'mvn clean install'
 2. Navigate to target directory of each module and run 'vmc push' (follow promts)
    Make sure bind RabbitMQ service to each application (use the same instance for each module)
-When modules are deployed go to its url and test it. It is currently deployed in CF under http://location-finder-home.cloudfoundry.com
+When modules are deployed go to its url and test it. It is currently deployed in CF under https://location-finder-home.cloudfoundry.com
 
 Tomcat/Jetty/JBoss - follow typical WAR deployment procedure. Make sure RabbitMQ is installed and Running. However as I mentioned before it will still work without it.
 
 IMPORTANT
-To achieve transparency when it comes to configuration differences while deploying in the cloud vs locally this application is utilizing the new feature of Spring Framework such as Profiles - http://blog.springsource.com/2011/02/14/spring-3-1-m1-introducing-profile/
+To achieve transparency when it comes to configuration differences while deploying in the cloud vs locally this application is utilizing the new feature of Spring Framework such as Profiles - https://spring.io/blog/
 When starting your local server set the following System property:
 
 -Dspring.profiles.active=local

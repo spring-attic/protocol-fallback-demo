@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -57,7 +57,7 @@ function post_to_url(path, params, method) {
 <p>
 <table width="100%">
 	<tr><td><a id="searchFormRequest" href="#" onclick="post_to_url('service/search', {'searchFormName':'form-a'});" >Java Front End</a></td></tr>
-	<tr><td><a href="http://location-finder-node.cloudfoundry.com/" >Node.js Front End</a></td></tr>
+	<tr><td><a href="https://location-finder-node.cloudfoundry.com/" >Node.js Front End</a></td></tr>
 </table>
 </p>
 </div>
