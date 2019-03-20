@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework.integration.demo</groupId>
     <artifactId>protocol-fallback-demo</artifactId>
@@ -148,17 +148,17 @@
         <repository>
             <id>repository.springframework.maven.release</id>
             <name>Spring Framework Maven Release Repository</name>
-            <url>http://maven.springframework.org/release</url>
+            <url>https://maven.springframework.org/release</url>
         </repository>
         <repository>
             <id>repository.springframework.maven.milestone</id>
             <name>Spring Framework Maven Milestone Repository</name>
-            <url>http://maven.springframework.org/milestone</url>
+            <url>https://maven.springframework.org/milestone</url>
         </repository>
         <repository>
             <id>repository.springframework.maven.snapshot</id>
             <name>Spring Framework Maven Snapshot Repository</name>
-            <url>http://maven.springframework.org/snapshot</url>
+            <url>https://maven.springframework.org/snapshot</url>
         </repository>
     </repositories>
 </project>
