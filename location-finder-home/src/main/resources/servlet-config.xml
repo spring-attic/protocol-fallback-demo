@@ -6,12 +6,12 @@
 	xmlns:task="http://www.springframework.org/schema/task"
 	xmlns:int-channel-registry="http://www.springframework.org/schema/integration/registry"
 	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http-2.0.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
-		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-2.0.xsd
-		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/integration/registry http://www.springframework.org/schema/integration/registry/spring-integration-registry-2.0.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/http https://www.springframework.org/schema/integration/http/spring-integration-http-2.0.xsd
+		http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/integration https://www.springframework.org/schema/integration/spring-integration-2.0.xsd
+		http://www.springframework.org/schema/task https://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/registry https://www.springframework.org/schema/integration/registry/spring-integration-registry-2.0.xsd">
 
 	<int-http:inbound-gateway request-channel="searchCriteriaRecieveChannel" 
 							  supported-methods="GET"
