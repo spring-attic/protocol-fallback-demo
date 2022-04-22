@@ -15,7 +15,7 @@
         <cloudfoundry-version>0.7.0</cloudfoundry-version>
         <jackson-mapper-version>1.4.3</jackson-mapper-version>
         <jstl-version>1.2</jstl-version>
-        <junit-version>4.7</junit-version>
+        <junit-version>4.13.1</junit-version>
         <log4j-version>1.2.16</log4j-version>
         <maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
         <maven-surefire-plugin-version>2.4.3</maven-surefire-plugin-version>
