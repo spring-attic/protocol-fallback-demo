@@ -1,3 +1,6 @@
+# This repository is no longer actively maintained by VMware, Inc.
+
+
 This demo demonstrates 2 important concepts of modern application development in the cloud.
 
 1. Application Modularization including cross-platform modularization
